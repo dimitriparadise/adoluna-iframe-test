@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adoluna iframe 测试</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Adoluna iframe 嵌入测试</h1>
+    <p>用于排查三个 Adoluna 子域在 iframe 中无法加载的原因。</p>
+  </header>
+
+  <main class="home">
+    <nav class="page-grid">
+      <a class="page-card" href="app-store.html">
+        <span class="page-card__label">Page 1</span>
+        <strong>App Store</strong>
+        <code>app.adoluna.com/store.html#store/1545626496</code>
+      </a>
+      <a class="page-card" href="pos.html">
+        <span class="page-card__label">Page 2</span>
+        <strong>POS</strong>
+        <code>pos.adoluna.com</code>
+      </a>
+      <a class="page-card" href="company.html">
+        <span class="page-card__label">Page 3</span>
+        <strong>Company</strong>
+        <code>company.adoluna.com</code>
+      </a>
+    </nav>
+
+    <section class="tips">
+      <h2>常见 iframe 失败原因</h2>
+      <ul>
+        <li><strong>X-Frame-Options</strong> 或 <strong>CSP frame-ancestors</strong> 响应头禁止被嵌入</li>
+        <li>页面 JS 检测 <code>window.top !== window.self</code> 后跳转或拒绝渲染</li>
+        <li>第三方 Cookie / 登录态在 iframe 中受限（Safari ITP、Chrome 第三方 Cookie 淘汰）</li>
+        <li>混合内容（HTTP 页面嵌在 HTTPS 父页面）</li>
+        <li>跨域资源加载失败导致白屏</li>
+      </ul>
+      <p>每个测试页底部有诊断面板，会记录 load / error 事件，并尝试读取 iframe 内容以判断是否为跨域拦截。</p>
+    </section>
+  </main>
+</body>
+</html>

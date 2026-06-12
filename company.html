@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iframe 测试 — Company</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="test-layout">
+  <div class="test-toolbar">
+    <a href="index.html">← 返回</a>
+    <strong>Page 3: Company</strong>
+    <code>https://company.adoluna.com</code>
+    <button type="button" onclick="reloadIframe()">重新加载</button>
+    <button type="button" onclick="clearDiagLog()">清空日志</button>
+  </div>
+
+  <div class="iframe-wrap">
+    <iframe
+      id="test-iframe"
+      src="https://company.adoluna.com"
+      title="Company"
+      allow="fullscreen; geolocation; microphone; camera"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  <section class="diagnostics">
+    <h2>诊断面板 <span id="diag-status" class="diag-status diag-status--pending">等待加载…</span></h2>
+    <p>打开浏览器 DevTools → Console / Network，查看是否有 <code>X-Frame-Options</code>、<code>frame-ancestors</code> 或 CSP 报错。</p>
+    <ul id="diag-log" class="diag-log"></ul>
+  </section>
+
+  <script src="diagnostics.js"></script>
+  <script>
+    initIframeDiagnostics("test-iframe", "https://company.adoluna.com");
+  </script>
+</body>
+</html>
