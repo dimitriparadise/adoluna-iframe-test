@@ -154,74 +154,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 55vh;
+  min-height: calc(100vh - 3.5rem);
   border: 0;
   background: #fff;
-}
-
-.diagnostics {
-  padding: 1rem;
-  background: #111827;
-  color: #e5e7eb;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.8rem;
-}
-
-.diagnostics h2 {
-  margin: 0 0 0.75rem;
-  font-size: 0.9rem;
-  font-family: inherit;
-  color: #93c5fd;
-}
-
-.diag-status {
-  display: inline-block;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.diag-status--pending {
-  background: #374151;
-  color: #d1d5db;
-}
-
-.diag-status--ok {
-  background: #065f46;
-  color: #a7f3d0;
-}
-
-.diag-status--warn {
-  background: #92400e;
-  color: #fde68a;
-}
-
-.diag-status--error {
-  background: #991b1b;
-  color: #fecaca;
-}
-
-.diag-log {
-  margin: 0.75rem 0 0;
-  padding: 0.75rem;
-  max-height: 180px;
-  overflow: auto;
-  border-radius: 8px;
-  background: #0b1220;
-  list-style: none;
-}
-
-.diag-log li {
-  padding: 0.2rem 0;
-  border-bottom: 1px solid #1f2937;
-}
-
-.diag-log li:last-child {
-  border-bottom: 0;
-}
-
-.diag-log .time {
-  color: #6b7280;
-  margin-right: 0.5rem;
 }

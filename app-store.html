@@ -11,8 +11,7 @@
     <a href="index.html">← 返回</a>
     <strong>Page 1: App Store</strong>
     <code>https://app.adoluna.com/store.html#store/1545626496</code>
-    <button type="button" onclick="reloadIframe()">重新加载</button>
-    <button type="button" onclick="clearDiagLog()">清空日志</button>
+    <button type="button" onclick="document.getElementById('test-iframe').src = document.getElementById('test-iframe').src">重新加载</button>
   </div>
 
   <div class="iframe-wrap">
@@ -24,19 +23,5 @@
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   </div>
-
-  <section class="diagnostics">
-    <h2>诊断面板 <span id="diag-status" class="diag-status diag-status--pending">等待加载…</span></h2>
-    <p>打开浏览器 DevTools → Console / Network，查看是否有 <code>X-Frame-Options</code>、<code>frame-ancestors</code> 或 CSP 报错。</p>
-    <ul id="diag-log" class="diag-log"></ul>
-  </section>
-
-  <script src="diagnostics.js"></script>
-  <script>
-    initIframeDiagnostics(
-      "test-iframe",
-      "https://app.adoluna.com/store.html#store/1545626496"
-    );
-  </script>
 </body>
 </html>
