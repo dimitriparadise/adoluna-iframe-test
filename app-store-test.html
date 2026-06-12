@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iframe 测试 — App Store (Test)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="test-layout">
+  <div class="test-toolbar">
+    <a href="index.html">← 返回</a>
+    <strong>Page 4: App Store (Test)</strong>
+    <code>https://apptest.adoluna.com/store.html#store/1550669052</code>
+    <button type="button" onclick="document.getElementById('test-iframe').src = document.getElementById('test-iframe').src">重新加载</button>
+  </div>
+
+  <div class="iframe-wrap">
+    <iframe
+      id="test-iframe"
+      src="https://apptest.adoluna.com/store.html#store/1550669052"
+      title="App Store Test"
+      allow="fullscreen; geolocation; microphone; camera"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</body>
+</html>
